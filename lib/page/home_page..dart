@@ -1,3 +1,7 @@
+import 'package:bangundatarilhamrb23/page/lingkaran_page.dart';
+import 'package:bangundatarilhamrb23/page/persegi_page.dart';
+import 'package:bangundatarilhamrb23/page/segitiga_page.dart';
+import 'package:bangundatarilhamrb23/page/trapesium_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,14 +21,30 @@ class HomePage extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(child: CustomMenu(tittle: "Persegi", imageAsset: "assets/persegi.png",)),
-              Expanded(child: CustomMenu(tittle: "Lingkaran", imageAsset: "assets/lingkaran.png",)),
+              Expanded(child: InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PersegiPage()));
+                  },
+                  child: CustomMenu(tittle: "Persegi", imageAsset: "assets/persegi.png",))),
+              Expanded(child: InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LingkaranPage()));
+                  },
+                  child: CustomMenu(tittle: "Lingkaran", imageAsset: "assets/lingkaran.png",))),
             ],
           ),
           Row(
             children: [
-              Expanded(child: CustomMenu(tittle: "Segitiga", imageAsset: "assets/segitiga.jpg",)),
-              Expanded(child: CustomMenu(tittle: "Trapesium", imageAsset: "assets/trapesium.png",)),
+              Expanded(child: InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SegitigaPage()));
+                  },
+                  child: CustomMenu(tittle: "Segitiga", imageAsset: "assets/segitiga.jpg",))),
+              Expanded(child: InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TrapesiumPage()));
+                  },
+                  child: CustomMenu(tittle: "Trapesium", imageAsset: "assets/trapesium.png",))),
             ],
           ),
         ],
